@@ -12,6 +12,9 @@ It's simple to integrate and does not affect the regular site behavior or perfor
 ## Usage
 ```
   <script src=".../gesture_spy.js"></script>
+  <script>
+  GestureSpy.spy();
+  </script>
 ```
 Then watch your Google Analytics account for the events. All Gesture Spy events will
 have their category set to "GestureSpy". In addition:
@@ -25,6 +28,17 @@ have their category set to "GestureSpy". In addition:
 ```
 
 Currently it only watches for Safari GestureEvents.
+
+## Other reporting
+The default reporting goes to Google Analytics, but you can send information
+whereeves:
+```
+GestureSpy.spy({
+  report: function(action, label, value) {
+     ...
+  });
+}
+```
 
 ## Contributing
 Please! Pull requests. Or requests.
